@@ -1,0 +1,40 @@
+.upload-area {
+    border: 2px dashed var(--bs-border-color);
+    border-radius: 0.5rem;
+    transition: border-color 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.upload-area:hover,
+.upload-area.dragging {
+    border-color: var(--bs-primary);
+}
+.preview-container,
+.result-container {
+    min-height: 250px;
+}
+#preview-image,
+#result-image {
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+#loading-indicator {
+    animation: pulse 1.5s infinite;
+}
+@media (max-width: 767.98px) {
+    .preview-container,
+    .result-container {
+        min-height: 200px;
+    }
+    #preview-image,
+    #result-image {
+        max-height: 200px;
+    }
+}
